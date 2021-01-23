@@ -1,0 +1,66 @@
+{
+  "name": "AntiSpam",
+  "permissions": "NONE",
+  "restriction": "1",
+  "_id": "aQRSZ",
+  "actions": [
+    {
+      "message": "0",
+      "varName": "",
+      "info": "2",
+      "storage": "1",
+      "varName2": "msg-text",
+      "name": "Store Message Info"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "dataName": "anti-spam-protection",
+      "comparison": "1",
+      "value": "tempVars(\"msg-text\")",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "3",
+      "iffalseVal": "3",
+      "name": "Check Member Data"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "**${member} SPAM SPAM SPAM!**",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "storage": "0",
+      "varName": "",
+      "name": "Delete Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "dataName": "anti-spam-protection",
+      "changeType": "0",
+      "value": "tempVars(\"msg-text\")",
+      "name": "Control Member Data"
+    },
+    {
+      "time": "2",
+      "measurement": "1",
+      "name": "Wait"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "dataName": "anti-spam-protection",
+      "changeType": "0",
+      "value": "tempVars(\"msg-text\")",
+      "name": "Control Member Data"
+    }
+  ],
+  "comType": "0"
+}
